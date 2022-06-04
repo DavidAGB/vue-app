@@ -73,18 +73,18 @@ import {ref} from 'vue'
 const router = useRouter();
 const user = {
    
-    email:"",
-    password:"",
+    email:"camila@gmail.com",
+    password:"12345678",
 };
 
 let errorMsg = ref('')
-console.log(user);
+
 function login (ev){
   ev.preventDefault();
   store
   .dispatch('login', user)
   .then((res) => {
-    
+     // localStorage.setItem("data", JSON.stringify(res.data));
     router.push({
       name: 'dashboard'
      })

@@ -1,13 +1,15 @@
 import axios from 'axios'
 import { store } from './store'
 
- const axiosClient = axios.create({
-     baseURL: "http://192.168.0.100:8000/api",
- });
+const axiosClient = axios.create({
 
- axiosClient.interceptors.request.use(config => {
-     config.headers.Authorization = `Bearer ${store.state.user.token}`
-     return config;
- });
+    baseURL: "http://127.0.0.1:8000/api",
+});
 
- export default axiosClient;
+
+axiosClient.interceptors.request.use(config => {
+    config.headers.Authorization = `Bearer ${store.state.user.token}`
+    return config;
+});
+
+export default axiosClient;

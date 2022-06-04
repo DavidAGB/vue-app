@@ -2,12 +2,12 @@
    
     
 
-  <section class="dark:bg-gray-800 dark:text-gray-100">
+  <section class="dark:bg-gray-800  text-gray-100">
 		<div class="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
  				<img :src="'http://192.168.0.100:8000/storage/' + post.image" alt="" class="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"/>
 				<div class="p-6 space-y-2 lg:col-span-5">
-					<h3 class="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{{post.name}}</h3>
-					<span class="text-xs dark:text-gray-400">February 19, 2021</span>
+					<h3 class="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{{post.title}}</h3>
+					<span class="text-xs text-gray-400">{{post.created_at}}</span>
 					<p> {{post.description}} </p>
 				</div>
 			
@@ -30,7 +30,7 @@ export default {
     
   data() {
     return {
-      post: {},
+      post: [],
        
       
     };
@@ -42,7 +42,7 @@ export default {
 
   methods: {
     getPostShow() {
-      this.axios.get('/product/' + this.$route.params.id )
+      this.axios.get('/post/' + this.$route.params.id )
         .then(response => {
           this.post = response.data;
           

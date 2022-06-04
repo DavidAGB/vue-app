@@ -82,39 +82,56 @@
 
 </template>
 
+<script>
+import { mapActions, mapState } from "vuex";
+export default {
+  created() {
+    this.setData();
+  },
 
-<script setup> 
- import { RouterLink, RouterView } from 'vue-router'
+  methods: {
+    ...mapActions(["setData"]),
+
+     
+  },
+
+}
+</script>
+
+<script  setup> 
+import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
- import PostShow from './views/PostShow.vue'
+import PostShow from './views/PostShow.vue'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
- import { mapActions, mapState } from "vuex";
-
+import { mapActions, mapState } from "vuex";
 import {useRouter} from 'vue-router';
-
 import {useStore} from 'vuex';
+ 
 const navigation = [
   { name: 'Home', href:'/', },
   { name: 'About', href: '/about',  },
   { name: 'Dashboard', href: '/dashboard',  },
+];
+const router = useRouter();
+const store = useStore();
+ 
+
+  function logout() {
+    store.dispatch("logout").then(() => {
+      router.push({
+        name: "login",
+      });
+    });
+  }; 
    
 
-];
+  
+
 
  
-  const router = useRouter();
-const store = useStore();
 
-    function logout() {
-      store.dispatch("logout").then(() => {
-        router.push({
-          name: "login",
-        });
-      });
-    }
-     
- 
+
 
 </script>
 
