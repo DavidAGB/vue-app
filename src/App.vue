@@ -1,10 +1,9 @@
- 
- 
- 
+
 <template>
-  <Disclosure as="nav" id="nav" class="bg-gray-900" v-slot="{ open }">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div class="relative flex items-center justify-between h-16">
+
+  <Disclosure as="nav" id="nav" class=" bg-gradient-to-r from-gray-900 via-slate-800 to-cyan-900   bg-opacity-96   sticky top-0 z-50       " v-slot="{ open }" >
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8   ">
+      <div class="relative flex items-center justify-between h-16 ">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -68,17 +67,15 @@
     </DisclosurePanel>
   </Disclosure>
 
-   <main class="bg-gray-800">
-      <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+   <main class=" bg-gradient-to-r from-gray-900 via-slate-800 to-cyan-900  ">
+      <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 " >
         <!-- Replace with your content -->
-        <div class="px-4 py-6 sm:px-0">
+        <div class="px-4 py-6 sm:px-0    ">
            <RouterView></RouterView>
         </div>
         <!-- /End replace -->
       </div>
   </main>
-
-   
 
 </template>
 
@@ -109,9 +106,9 @@ import {useRouter} from 'vue-router';
 import {useStore} from 'vuex';
  
 const navigation = [
-  { name: 'Home', href:'/', },
-  { name: 'About', href: '/about',  },
-  { name: 'Dashboard', href: '/dashboard',  },
+  { name: 'Home', href:'/',  current: false},
+  { name: 'About', href: '/about',   current: false},
+  { name: 'Dashboard', href: '/dashboard',  current: false },
 ];
 const router = useRouter();
 const store = useStore();

@@ -32,7 +32,7 @@ function resetIsShowing() {
                   </div>
                   <div class="mt-4 flex justify-between">
                     <div>
-                      <h3 class="text-md text-gray-300">
+                      <h3 class="text-md text-gray-300 font-sans">
                           {{ post.title}}
                       </h3>
                       <p class="mt-1 text-sm text-gray-500"></p>
