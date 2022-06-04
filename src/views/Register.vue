@@ -74,7 +74,7 @@ function register (ev){
     router.push({
       name: 'dashboard'
      })
-  }).catch((err) => {
+  }).catch((error) => {
     console.log(error);
   });
 
